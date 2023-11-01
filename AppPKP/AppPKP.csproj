@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>4ece2fb3-3a12-4ea6-b9e3-f76da69b1845</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Nowy folder\**" />
+    <Compile Remove="wwwroot\Nowy folder\**" />
+    <Content Remove="Nowy folder\**" />
+    <Content Remove="wwwroot\Nowy folder\**" />
+    <EmbeddedResource Remove="Nowy folder\**" />
+    <EmbeddedResource Remove="wwwroot\Nowy folder\**" />
+    <None Remove="Nowy folder\**" />
+    <None Remove="wwwroot\Nowy folder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Pages\Class.cs" />
+    <Compile Remove="Pages\PKP\Index.cshtml.cs" />
+    <Compile Remove="SesjaController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Dodaj.cshtml" />
+    <Content Remove="Pages\PKP\Index.cshtml" />
+    <Content Remove="Pages\Rozklad.cshtml" />
+    <Content Remove="Pages\_ViewStart1.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="wwwroot\img\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+</Project>

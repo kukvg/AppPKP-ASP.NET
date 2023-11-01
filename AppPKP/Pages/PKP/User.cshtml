@@ -1,0 +1,42 @@
+﻿@page
+
+@model AppPKP.Pages.PKP.UserModel
+@{
+    ViewData["Title"] = "PKP - Twoje bilety";
+}
+
+<div id="ramka">
+    <h1 class="display-4">Twoje zakupione bilety!</h1>
+    <br />
+
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Godzina</th>
+                <th>Wyjazd</th>
+                <th>Przyjazd</th>
+                <th>Droga</th>
+                <th>Nazwa Użytkownika</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.BiletyList)
+            {
+                <tr>
+                    <td>@item.godzina</td>
+                    <td>@item.wyjazd</td>
+                    <td>@item.przyjazd</td>
+                    <td>@item.droga</td>
+                    <td>@item.nazwaUser</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @if (!string.IsNullOrEmpty(Model.mess))
+    {
+        <div>
+            <strong>@Model.mess</strong>
+        </div>
+    }
+</div>

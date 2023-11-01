@@ -1,0 +1,60 @@
+﻿@page
+
+
+@model AppPKP.Pages.PKP.RozkladModel
+@{
+    ViewData["Title"] = "PKP - Rozklad jazdy";
+   // var nazwaUser = HttpContextAccessor.HttpContext.Session.GetString(ZmienneSesja.sesjaUser);
+   // var idSesji = HttpContextAccessor.HttpContext.Session.GetString(ZmienneSesja.idSesji);
+}
+
+<div id="ramka">
+    <h1 class="display-4">Rozklad jazdy!</h1><br />
+
+
+   
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    @*<th>ID</th>*@
+                    <th>Godzina odjazdu</th>
+                    <th>Wyjazd</th>
+                    <th>Przyjazd</th>
+                    <th>Cala trasa</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model.RozkladList)
+                {
+                    <tr>
+                        @*<td>@item.id</td>*@
+                        <td>@item.godzina</td>
+                        <td>@item.wyjazd</td>
+                        <td>@item.przyjazd</td>
+                        <td>@item.droga</td>
+                    </tr>
+                }
+               @* @foreach (var item in Model.RozkladList)
+                {
+                    if (Model.tempSite == item.id)
+                    {
+                        <tr>
+                            <td>@item.id</td>
+                            <td>@item.godzina</td>
+                            <td>@item.wyjazd</td>
+                            <td>@item.przyjazd</td>
+                            <td>@item.droga</td>
+                        </tr>
+                    }
+                onclick="@(() => Model.Poprzedni())"
+                onclick="@(() => Model.Kolejny())"
+                }*@
+            </tbody>
+        </table>
+    </div>
+    <br />
+
+    @*<button id="poprzednie">Poprzednie polaczenie</button>  
+    <button  id="nastepne">Nastepne polaczenie</button>*@
+</div>

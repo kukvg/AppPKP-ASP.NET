@@ -1,0 +1,55 @@
+﻿@page
+@model AppPKP.Pages.PKP.RegisterModel
+@{
+    ViewData["Title"] = "PKP - Register";
+}
+
+<div class="text-center">
+    <div id="ramka">
+        <h1 class="display-4">Zarejestruj sie!</h1><br />
+
+
+
+
+            <div class="text-center">
+
+                <form method="post">
+              
+                 
+                    <label for="Imie">Imie:</label><br />
+                    <input name="Imie" type="text" size="50" id="imie" /> <br /><br />
+
+                    <label for="Nazwisko">Nazwisko:</label><br />
+                    <input name="Nazwisko" type="text" size="50" id="nazw" /> <br /><br />
+
+
+                    <label for="Email">Email:</label><br />
+                    <input name="Email" type="email" size="50" id="email" /> <br /><br />
+
+                     <label for="Haslo">Hasło:</label><br />
+                     <input name="Haslo" type="password" size="50" id="passw" /> <br /><br />
+
+                    <label for="PowtHaslo">Powtórz hasło:</label><br />
+                     <input name="PowtHaslo" type="password" size="50" id="confpassw" /> <br /><br />
+
+                    <button type="submit" id="submitBtn">Zarejestruj</button>
+                 
+                
+                </form>
+                @if (Model.mess.Length > 0)
+                {
+                    <div>
+                        <strong>@Model.mess</strong>
+                    </div>
+                    
+                 }
+
+            </div>
+            <br />
+
+
+
+        </div>
+        <br />
+
+</div>

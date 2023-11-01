@@ -1,0 +1,55 @@
+﻿@page
+
+@model AppPKP.Pages.PKP.DodajModel
+
+@{
+    ViewData["Title"] = "PKP - Dodaj polaczenie";
+    //var nazwaUser = HttpContextAccessor.HttpContext.Session.GetString(ZmienneSesja.sesjaUser);
+   // var idSesji = HttpContextAccessor.HttpContext.Session.GetString(ZmienneSesja.idSesji);
+
+}
+
+<div class="text-center">
+    <div id="ramka">
+      @*  <h1 class="display-4">Dodaj polaczenie!</h1><br />*@
+
+
+
+
+            <button id="rozklad"><a class="nav-link text-dark" asp-area="" asp-page="/PKP/Rozklad">Rozklad jazdy</a></button><br /><br />
+
+            <div class="text-center">
+
+                <form method="post">
+                    <label for="Godzina">Godzina:</label>
+                    <input name="Godzina" type="time" size="50" id="godz" /><br /><br />
+
+                    <label for="Odjazd">Odjazd:</label>
+                    <input name="Odjazd" type="text" size="51" id="odj" /> <br /><br />
+
+                    <label for="Przyjazd">Przyjazd:</label>
+                    <input name="Przyjazd" type="text" size="50" id="przyj" /> <br /><br />
+
+
+                    <label for="Trasa">Trasa:</label>
+                    <input name="Trasa" type="text" size="53" id="trasa" /> <br /><br />
+
+                    <button type="submit" id="submitBtn">Dodaj</button>
+                </form>
+                @if (Model.mess.Length > 0)
+                {
+                    <div>
+                        <strong>@Model.mess</strong>
+                    </div>
+
+                 }
+
+            </div>
+            <br />
+
+
+
+        </div>
+        <br />
+
+</div>

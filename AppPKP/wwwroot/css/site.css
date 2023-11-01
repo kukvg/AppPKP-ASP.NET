@@ -1,0 +1,60 @@
+
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+#ramka {
+    background: linear-gradient(to right, white, grey);
+    padding: 50px 25px;
+    border-radius: 0.5rem;
+}
+input {
+    font-weight: 300;
+    border: solid #fff 1px;
+    border-radius: 0.35rem;
+    font-size: 18px;
+}
+/*label{
+    display: block;
+
+}*/
+#wyszukaj, #rozklad, #poprzednie, #nastepne, #dodaj, #submitBtn {
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+    transition-duration: 0.2s;
+    border-radius: 0.35rem;
+    white-space: nowrap;
+}
+#godz
+{
+   width: 450px;
+}
+#reglink{
+    text-decoration: none;
+    color:black;
+}
+#wyloguj{
+    border: none;
+}
+#bilet{
+    background-color:lightgray;
+    border: none;
+}
+#abilet{
+    color:black;
+    text-decoration:none;
+}

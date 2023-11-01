@@ -1,0 +1,112 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "PKP - Wyszukaj polaczenie";
+}
+
+
+@{
+
+    var nazwaUser = Request.HttpContext.Session.GetString(ZmienneSesja.sesjaUser);
+    int id = 0;
+    
+}
+
+
+  
+<div class="text-center">
+    
+
+
+    <div id="ramka">
+        <h1 class="display-4">Wyszukaj polaczenie!</h1><br />
+
+        <button id="rozklad"><a class="nav-link text-dark" asp-area="" asp-page="/PKP/Rozklad">Rozklad jazdy</a></button><br /><br />
+
+        <div>
+
+            <form method="post" asp-page-handler="Search">
+                <label for="Godzina">Godzina:</label>
+                <input name="Godzina" type="time" size="50" id="godz" /><br /><br />
+
+                <label for="Odjazd">Odjazd:</label>
+                <input name="Odjazd" type="text" size="50" id="odj" /> <br /><br />
+                
+                <label for="Przyjazd">Przyjazd:</label>
+                <input name="Przyjazd" type="text" size="50" id="przyj" /> <br /><br />
+
+                <button type="submit" id="submitBtn">Wyszukaj</button>
+            </form>
+            <br /><br />
+                        
+                        @foreach (var item in Model.PolaczeniaList)
+                        {
+
+                            id += 1;
+
+                           
+                                
+                                
+                                @if (!string.IsNullOrWhiteSpace(nazwaUser))
+                                {
+                                    //przejscie do zakladki user -> bilety
+                                    <form method="post" asp-page-handler="Order">
+                                        <div>
+                                            @* <p>Zamówienie nr @item.id</p> *@
+                                            <table>
+                                                <tb>
+                                                    <tr>
+                                                        <td>@item.godzina  -  </td>
+                                                        <td>@item.wyjazd  -  </td>
+                                                        <td>@item.przyjazd  -  </td>
+                                                        <td>@item.droga</td>
+                                                        <input type="hidden" name="nazwaUser" value="@nazwaUser">
+                                                        <input type="hidden" name="polaczenieID" value="@item.id">
+                                                        <td><button type="submit">Zamów</button></td>
+                                                    </tr>
+                                                </tb>
+                                            </table>
+    
+                                           
+                                        </div>
+                                    </form>
+                                      @* <td><button><a id="abilet" href="/PKP/User" onclick="OnPost()">Kup bilet</a></button></td> *@
+
+                                      @*<td><asp:Button ID="myButton" runat="server" Text="Kliknij mnie" OnClick="button_kup" />tests</td>*@
+
+
+                                  
+                                    
+                                }
+                                else
+                                {
+                                    <div>
+                                        @* <p>Zamówienie nr @item.id</p> *@
+                                        <table>
+                                            <tb>
+                                                <tr>
+                                                    <td>@item.godzina  -  </td>
+                                                    <td>@item.wyjazd  -  </td>
+                                                    <td>@item.przyjazd  -  </td>
+                                                    <td>@item.droga</td>
+                                                    <td> <button id="bilet"><a id="abilet" href="/PKP/Login">Kup bilet</a></button></td>
+                                                </tr>
+                                            </tb>
+                                        </table>
+
+                                        @* <button type="submit" name="orderId" href="/PKP/Login">Zamów</button> *@
+                                    </div>
+                                    @* <td><button id="bilet"><a id="abilet" href="/PKP/Login">Kup bilet</a></button></td> *@
+                                }
+                                
+                         
+                        }
+
+        </div>
+        <br />
+
+        
+        
+    </div>
+   
+</div>

@@ -1,0 +1,31 @@
+﻿@page
+@model AppPKP.Pages.PKP.IndexModel
+
+@{
+    ViewData["Title"] = "PKP - Wyszukaj polaczenie";
+}
+
+<div class="text-center">
+    
+    
+
+    <div id="ramka">
+        <h1 class="display-4">Wyszukaj polaczenie!</h1><br />
+
+        <button id="rozklad"><a class="nav-link text-dark" asp-area="" asp-page="/Rozklad">Rozklad jazdy</a></button><br /><br />
+
+        <div>
+
+                <label for="Godzina">Godzina:</label>
+                <input name="Godzina" type="text" size="50" id="godz" /><br /><br />
+                <label for="Odjazd">Odjazd:</label>
+                <input name="Odjazd" type="text" size="50" id="odj" /><br /><br />
+                <label for="Odjazd">Przyjazd:</label>
+                <input name="Przyjazd" type="text" size="50" id="przyj"/>
+        </div>
+        <br />
+
+        <button id="wyszukaj">Wyszukaj polaczenie</button>
+    </div>
+   
+</div>

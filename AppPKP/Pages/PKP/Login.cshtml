@@ -1,0 +1,47 @@
+﻿@page
+@model AppPKP.Pages.PKP.LoginModel
+@{
+}
+
+<div class="text-center">
+    <div id="ramka">
+        <h1 class="display-4">Zaloguj się</h1><br />
+
+
+
+
+        <div class="text-center">
+
+            <form method="post">
+
+
+                <label for="Email">Email:</label><br />
+                <input name="Email" type="email" size="50" id="email" /> <br /><br />
+
+                <label for="Haslo">Hasło:</label><br />
+                <input name="Haslo" type="password" size="50" id="passw" /> <br /><br />
+
+                <button type="submit" id="submitBtn">Zaloguj</button><br /><br />
+
+
+            </form>
+                <div>
+                <h6 class="display-8">Nie masz jeszcze konta? <b><a id="reglink" href="Register">Zarejestruj się tutaj.</a></b></h6>
+                </div>
+            @if (Model.mess.Length > 0)
+            {
+                <div>
+                    <strong>@Model.mess</strong>
+                </div>
+
+            }
+
+        </div>
+        <br />
+
+
+
+    </div>
+    <br />
+
+</div>
