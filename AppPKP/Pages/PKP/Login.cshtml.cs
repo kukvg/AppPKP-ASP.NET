@@ -22,7 +22,7 @@ namespace AppPKP.Pages.PKP
 
         public string Haslo { get; set; }
 
-        public bool sUser = false;
+        public bool sUser { get; set; }
 
         List<string> emailList = new List<string>();
         List<string> hashedPasswordList = new List<string>();

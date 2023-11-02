@@ -36,13 +36,12 @@
 
                     <button type="submit" id="submitBtn">Dodaj</button>
                 </form>
-                @if (Model.mess.Length > 0)
+                @if (!string.IsNullOrEmpty(Model.mess))
                 {
                     <div>
                         <strong>@Model.mess</strong>
                     </div>
-
-                 }
+                }
 
             </div>
             <br />

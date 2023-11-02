@@ -11,14 +11,14 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore.Internal;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure;
-
-
+using Microsoft.Identity.Client;
 
 namespace AppPKP.Pages.PKP
 {
     public class DodajModel : PageModel
     {
 
+        public string nazwaUser { get; set; }
         public string Godzina { get; set; }
         public string Odjazd { get; set; }
         public string Przyjazd { get; set; }
@@ -33,48 +33,25 @@ namespace AppPKP.Pages.PKP
         protected void PageLoad(object sender, EventArgs e)
         {
 
-                try
-                {
-                    string bazaconnectString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
-                    using (SqlConnection conn = new SqlConnection(bazaconnectString))
-                    {
-                        conn.Open();
-                        String polecenie = "SELEC su FROM users";
-                        using (SqlCommand comm = new SqlCommand(polecenie, conn))
-                        {
-                            using (SqlDataReader reader = comm.ExecuteReader())
-                            {
-                                while (reader.Read())
-                                {
-                                    isSu = reader.GetBoolean(6);
-                                }
-                            }
-
-
-
-
-                            comm.ExecuteNonQuery();
-
-                        }
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Exception: " + ex.ToString());
-                }
+              
             
+        }
+
+
+        public void OnGet()
+        {
+
         }
 
         public void OnPost()
         {
+            isSu = ZmienneSesja.sUser;
 
             Godzina = Request.Form["Godzina"];
             Odjazd = Request.Form["Odjazd"];
             Przyjazd = Request.Form["Przyjazd"];
             Trasa = Request.Form["Trasa"];
-            if(isSu == true) 
+            if (isSu == true)
             {
                 if (Godzina.Length != 0 && Odjazd.Length != 0 && Przyjazd.Length != 0 && Trasa.Length != 0)
                 {
@@ -116,12 +93,10 @@ namespace AppPKP.Pages.PKP
             }
             else
             {
+
                 mess = "Brak uprawnien";
             }
-            
-        }
-        public void OnGet()
-        {
+
         }
     }
 }
