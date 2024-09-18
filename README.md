@@ -4,4 +4,4 @@ The application was created for educational purposes so it runs on a local datab
 
 [#link](https://drive.google.com/file/d/13UVSumn-_9gwqap2OzGvqQxZF6mNqrPP/view?usp=sharing)https://drive.google.com/file/d/13UVSumn-_9gwqap2OzGvqQxZF6mNqrPP/view?usp=sharing
 
-Greetings, Dominik Kuka.
+Dominik Kuka.
